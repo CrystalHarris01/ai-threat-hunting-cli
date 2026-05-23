@@ -1,0 +1,37 @@
+title: Suspicious Network Reconnaissance Activity
+id: 7d4f5f52-b2d1-4d91-9f21-111111111111
+status: experimental
+description: Detects potential reconnaissance or network scanning behavior based on traffic to ports observed during the lab Nmap scan.
+author: Crystal Harris
+date: 2026-05-22
+
+logsource:
+  product: network
+  category: firewall
+
+detection:
+  selection:
+    destination_port:
+      - 5555
+      - 8009
+      - 8080
+      - 9090
+  condition: selection
+
+fields:
+  - src_ip
+  - dest_ip
+  - destination_port
+  - protocol
+  - timestamp
+
+falsepositives:
+  - Authorized vulnerability scans
+  - Internal asset inventory scanning
+  - Administrator troubleshooting
+
+level: medium
+
+tags:
+  - attack.discovery
+  - attack.t1046
