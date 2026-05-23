@@ -44,6 +44,22 @@ ai-threat-hunting-cli/
 └── scripts/
 ```
 
+└── scripts/
+## Current Completed Artifacts
+
+- Created project structure for AI-assisted threat hunting documentation
+- Added sample Nmap scan log
+- Added Python script to parse open TCP ports from Nmap output
+- Added Nmap threat analysis hunt report
+- Added Sigma-style detection rule for suspicious reconnaissance activity
+- Added screenshots documenting terminal AI workflow and analysis output
+
+## Working Script
+
+Run the Nmap log analyzer:
+
+```bash
+python3 scripts/analyze_nmap_log.py
 ## Initial Threat Hunting Scenarios
 
 ### Scenario 1: Nmap Reconnaissance
