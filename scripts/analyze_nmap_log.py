@@ -1,0 +1,35 @@
+from pathlib import Path
+import re
+
+LOG_PATH = Path("sample_logs/nmap-scan-example.log")
+
+
+def main():
+    if not LOG_PATH.exists():
+        print(f"Log file not found: {LOG_PATH}")
+        return
+
+    text = LOG_PATH.read_text()
+    ports = re.findall(r"(\d+)/tcp\s+open\s+(\S+)", text)
+
+    print("AI Threat Hunting CLI - Nmap Log Analyzer")
+    print("=" * 45)
+
+    if not ports:
+        print("No open TCP ports found.")
+        return
+
+    print(f"Open TCP ports discovered: {len(ports)}\n")
+
+    for port, service in ports:
+        print(f"- Port {port}/tcp open: {service}")
+
+    print("\nThreat Hunting Notes:")
+    print("- Review whether this scan was authorized.")
+    print("- Validate exposed services against asset inventory.")
+    print("- Check SIEM/firewall logs for repeated scans from the same source.")
+    print("- MITRE ATT&CK: T1046 - Network Service Discovery")
+
+
+if __name__ == "__main__":
+    main()
