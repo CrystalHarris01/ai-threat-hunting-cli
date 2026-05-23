@@ -1,0 +1,15 @@
+# Sample Nmap Scan Output
+# Lab-safe example data for threat hunting documentation
+
+Starting Nmap 7.95 at 2026-05-22 20:15 EDT
+Nmap scan report for 10.0.0.238
+Host is up (0.020s latency).
+Not shown: 996 closed tcp ports (reset)
+PORT     STATE SERVICE
+5555/tcp open  freeciv
+8009/tcp open  ajp13
+8080/tcp open  http-proxy
+9090/tcp open  zeus-admin
+MAC Address: 7C:61:66:1A:EA:A1 (Amazon Technologies)
+
+Nmap done: 1 IP address (1 host up) scanned in 3.42 seconds
